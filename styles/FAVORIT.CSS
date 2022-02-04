@@ -1,0 +1,53 @@
+.favorito{
+    position: relative;
+    background-color:#c492da;
+    background-image: url(https://wallup.net/wp-content/uploads/2018/09/30/457769-coming-soon-sign-text-coming-soon.jpg);
+    min-height: 100vh;
+    top: 0;
+    left: 78px;
+    width: calc(100% - 78px);
+    transition: all 0.5s ease;
+    z-index: 2;
+    background-size: 1920px 1080px;
+    
+  }
+  .sidebar.open ~ .favorito{
+    left: 250px;
+    width: calc(100% - 250px);
+    
+  }
+
+.sidebar.open ~ .favorito{
+left: 250px;
+width: calc(100% - 250px);
+
+}
+
+.favorito h1 { background:rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(10px);
+   max-width: 50%;
+   left: 25%;
+   position: relative;
+   display: inline-block;
+   color: #000000;
+   font-size: 35px;
+   text-align: center;   
+   font-family: 'Roboto Condensed', sans-serif;     
+   width: 100%;
+   border-radius: 12px;}
+   
+.favorito p { background:rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(10px);
+   max-width: 50%;
+   bottom: 10%;
+   left: 25%;
+   position: absolute;
+   display: inline-block;
+   color: #000000;
+   font-size: 35px;
+   text-align: center;   
+   font-family: 'Roboto Condensed', sans-serif;     
+   width: 100%;
+   border-radius: 12px;}

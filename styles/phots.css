@@ -1,0 +1,60 @@
+.foto{
+    position: relative;
+    background-color:#c492da;
+    background-image: url(https://wallpapersmug.com/download/1920x1080/8d813f/beautiful-anime-girl-mai-sakurajima.jpg);
+    min-height: 100vh;
+    top: 0;
+    left: 78px;
+    width: calc(100% - 78px);
+    transition: all 0.5s ease;
+    z-index: 2;
+    background-size: 1920px 1080px;
+    text-align: center;   
+  }
+  .sidebar.open ~ .foto{
+    left: 250px;
+    width: calc(100% - 250px);
+    
+  }
+
+.sidebar.open ~ .foto{
+left: 250px;
+width: calc(100% - 250px);
+
+}
+
+.foto h1 {    
+    background:rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(10px);
+    max-width: 100%;
+    color: rgb(226, 0, 188);
+    text-align: center;
+    margin: 20px;
+    text-indent: 1em;
+    font-size: 35px;
+    word-break: break-word; 
+    border: 5px double rgb(4, 88, 167);
+    border-radius: 15px;
+    
+    
+    position: relative;
+    
+    padding: 6px;	}
+    .foto h2 { background:rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(0px);
+        -webkit-backdrop-filter: blur(10px);
+        max-width: 100%;
+        color: rgb(228, 220, 227);
+        text-align: center;
+        margin: 20px;
+        text-indent: 1em;
+        font-size: 35px;
+        word-break: break-word; 
+        border: 5px double rgb(4, 88, 167);
+        border-radius: 15px;
+        
+        
+        position: relative;
+        
+        padding: 6px;}

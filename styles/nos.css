@@ -1,0 +1,83 @@
+.nos{
+        position: relative;
+        background-color:#c492da;
+        background-image: url(http://avante.biz/wp-content/uploads/Anime-Backgrounds-Wallpapers/Anime-Backgrounds-Wallpapers-038.jpg);
+        min-height: 100vh;
+        top: 0;
+        left: 78px;
+        width: calc(100% - 78px);
+        transition: all 0.5s ease;
+        z-index: 2;
+        background-size: 1920px 1080px;
+        
+      }
+      .sidebar.open ~ .nos{
+        left: 250px;
+        width: calc(100% - 250px);
+        
+      }
+
+.sidebar.open ~ .nos{
+    left: 250px;
+    width: calc(100% - 250px);
+    
+  }
+
+  .nos h1 {
+    
+    display: inline-block;
+    color: #0bd0eb;
+    font-size: 35px;
+    text-align: center;   
+    font-family: 'Roboto Condensed', sans-serif;     
+    width: 100%;
+  }
+
+
+  .nos h3{ 
+    background:rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(10px);
+   max-width: 50%;
+   left: 25%;
+   position: relative;
+   display: inline-block;
+   color: #000000;
+   font-size: 35px;
+   text-align: center;   
+   font-family: 'Roboto Condensed', sans-serif;     
+   width: 100%;
+   border-radius: 12px;
+  }
+
+  .nos p{ 
+      font-size: 25px;
+      max-width: 100ch;
+      width: 65%;
+      text-align: justify;
+    
+      backdrop-filter: blur(8px) saturate(200%);
+      -webkit-backdrop-filter: blur(8px) saturate(200%);
+      background-color: rgba(255, 255, 255, 0.40);
+      border-radius: 12px;
+     
+      position: relative;
+      left: 50%;
+      bottom: 60%;
+      transform: translate(-50%) }
+      
+      .nos img
+      {
+        
+        width: 60%;
+        border-style:ridge ;
+        border-color: #060772;
+        border-radius: 40px;
+        border-width: 10px;
+        transform: translateX(-50%);
+        position: relative;
+     
+        left: 48%;
+      }
+
+  

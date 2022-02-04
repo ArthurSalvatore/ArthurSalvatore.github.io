@@ -1,0 +1,117 @@
+.momento{
+    position: relative;
+    background-color:#c492da;
+    background-image: url(https://w.wallha.com/ws/10/D31AGwVh.png);
+    min-height: 100vh;
+    top: 0;
+    left: 78px;
+    width: calc(100% - 78px);
+    transition: all 0.5s ease;
+    z-index: 2;
+    background-size: 1920px 1080px;
+    
+  }
+  .sidebar.open ~ .momento{
+    left: 250px;
+    width: calc(100% - 250px);
+    
+  }
+
+  .momento h1 {
+    display: inline-block;
+    color: #0bd0eb;
+    font-size: 35px;
+    text-align: center;   
+    font-family: 'Roboto Condensed', sans-serif;     
+    width: 100%;
+  }
+
+  .momento .tt h2{
+    background:rgba(231, 231, 231, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(10px);
+    color: rgb(55, 212, 173);
+   text-align: center;
+   font-size: 30px;
+   max-width: 50%;
+   transform: translateX(-50%);
+   position: relative;
+   left: 48%;
+   margin: 20px;
+  }
+
+  .momento h3{
+    background:rgba(231, 231, 231, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(10px);
+    color: rgb(55, 212, 173);
+   text-align: center;
+   font-size: 20px;
+   max-width: 25%;
+   
+   position: relative;
+   margin: 20px;
+   }
+
+  
+  .momento .audi{
+    position: relative;
+    max-width: 25%;
+    left: 5%
+}
+.momento .imag2 img{
+  width: 20%;
+  
+  transform: translateX(-50%);
+
+  position: relative;
+  
+  left: 20%;
+  margin-bottom: 30px;
+
+}
+
+
+.momento .imag1 p{
+  width: 20%;
+  background:rgba(231, 231, 231, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(10px);
+    color: rgb(55, 212, 173);
+  transform: translateX(-50%);
+  position: relative;
+  margin: 2px;
+
+  left: 48%;
+  
+}
+.momento .imag1 img{
+  width: 20%;
+  
+  transform: translateX(-50%);
+  position: relative;
+
+  left: 48%;
+  
+  
+
+  
+  
+}
+.momento .imag2 p{
+  width: 20%;
+  background:rgba(231, 231, 231, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(10px);
+    color: rgb(55, 212, 173);
+  transform: translateX(-50%);
+  position: relative;
+  width: 20%;
+  
+  transform: translateX(-50%);
+
+  position: relative;
+  
+  left: 20%;
+  margin: 2px;
+}
