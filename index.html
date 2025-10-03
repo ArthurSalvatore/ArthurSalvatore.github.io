@@ -4,406 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arthur Salvatore - UX/UI Designer</title>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    
+    <!-- Link para o novo arquivo CSS -->
+    <link rel="stylesheet" href="style.css"> 
 
-    <style>
-        /* --- GERAL E VARIÁVEIS --- */
-        :root {
-            --primary-color: #A68E77;
-            --secondary-color: #F2EBE3;
-            --dark-color: #383838;
-            --light-color: #FFFFFF;
-            --glass-bg: rgba(255, 255, 255, 0.1);
-            --glass-border: 1px solid rgba(255, 255, 255, 0.2);
-            --font-body: 'Poppins', sans-serif;
-            --font-title: 'Playfair Display', serif; /* Nova fonte para títulos */
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: var(--font-body);
-            background: linear-gradient(120deg, var(--secondary-color) 0%, #d4c4b5 100%);
-            color: var(--dark-color);
-            line-height: 1.7;
-            overflow-x: hidden;
-            position: relative;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        /* Aplicação da nova fonte para os títulos */
-        h1, h2, h3 {
-            font-family: var(--font-title);
-            font-weight: 700;
-        }
-
-        /* --- ELEMENTOS DECORATIVOS DE FUNDO --- */
-        .background-shapes {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            overflow: hidden;
-        }
-
-        .shape {
-            position: absolute;
-            border-radius: 50%;
-            background: linear-gradient(45deg, var(--primary-color), #c3ab95);
-            opacity: 0.2;
-        }
-
-        .shape1 {
-            width: 300px;
-            height: 300px;
-            top: 10vh;
-            left: 10vw;
-        }
-
-        .shape2 {
-            width: 200px;
-            height: 200px;
-            bottom: 15vh;
-            right: 15vw;
-        }
-
-        /* --- HEADER --- */
-        header {
-            position: fixed;
-            width: 100%;
-            top: 1rem;
-            left: 0;
-            z-index: 1000;
-            padding: 0 1rem;
-        }
-
-        header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 2rem;
-            border-radius: 12px;
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
-            width: 95%;
-            max-width: 1100px;
-        }
-
-        .logo {
-            font-family: var(--font-title); /* Logo com a fonte de título */
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--dark-color);
-            text-decoration: none;
-        }
-
-        header nav ul {
-            list-style: none;
-            display: flex;
-            gap: 2rem;
-        }
-
-        header nav ul li a {
-            text-decoration: none;
-            color: var(--dark-color);
-            font-weight: 400;
-            font-family: var(--font-body);
-            position: relative;
-            padding-bottom: 5px;
-        }
-
-        header nav ul li a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--primary-color);
-            transition: width 0.3s ease;
-        }
-
-        header nav ul li a:hover::after {
-            width: 100%;
-        }
-
-        /* --- SEÇÃO HERO --- */
-        #hero {
-            min-height: 90vh;
-            display: flex;
-            align-items: center;
-            padding-top: 120px;
-        }
-
-        #hero h1 {
-            font-size: clamp(2.8rem, 5vw, 4rem); /* Aumentei um pouco para a nova fonte */
-            line-height: 1.2;
-            margin-bottom: 1rem;
-        }
-
-        #hero p {
-            font-size: 1.2rem;
-            font-weight: 300;
-            max-width: 500px;
-        }
-
-        /* --- SEÇÕES PADRÃO --- */
-        section {
-            padding: 5rem 0;
-        }
-
-        section h2 {
-            text-align: center;
-            font-size: 3rem; /* Títulos de seção maiores */
-            margin-bottom: 3rem;
-            position: relative;
-            padding-bottom: 1rem;
-        }
-
-        section h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background: var(--primary-color);
-            border-radius: 2px;
-        }
-
-        /* --- SEÇÃO SOBRE --- */
-        .sobre-content {
-            display: flex;
-            gap: 3rem;
-            align-items: flex-start;
-        }
-        .sobre-text, .sobre-education {
-            flex: 1;
-        }
-        .sobre-education {
-            padding: 1.5rem;
-            border-radius: 15px;
-            background: var(--glass-bg);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border: var(--glass-border);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
-        }
-        .sobre-education h3 {
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-        }
-
-        /* --- SEÇÃO SKILLS (SOFT E HARD) --- */
-        .skills-intro {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto 3rem auto;
-            font-size: 1.1rem;
-        }
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1.5rem;
-            text-align: center;
-        }
-        .skill-card {
-            padding: 2rem 1rem;
-            border-radius: 15px;
-            background: var(--glass-bg);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border: var(--glass-border);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
-        }
-        .skill-card i {
-            font-size: 2rem;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-        .skill-card h4 {
-            font-family: var(--font-body); /* Usando a fonte do corpo para os cards */
-            font-weight: 600;
-        }
-        .skill-card p {
-            font-size: 0.8rem;
-            font-weight: 300;
-            margin-top: 0.5rem;
-        }
-        
-        #hardskills {
-            background-color: rgba(0,0,0,0.02);
-        }
-
-        /* --- SEÇÃO EXPERIÊNCIA --- */
-        #experiencia {
-            background-color: rgba(0,0,0,0.02);
-        }
-        .experience-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .experience-card {
-            padding: 1.5rem 2rem;
-            border-radius: 15px;
-            background: var(--glass-bg);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border: var(--glass-border);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-        .experience-card:hover {
-            transform: translateY(-5px);
-        }
-        .experience-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 0.5rem;
-        }
-        .experience-header h3 {
-            color: var(--dark-color);
-        }
-        .experience-header .date {
-            font-weight: 600;
-            color: var(--primary-color);
-            flex-shrink: 0;
-            margin-left: 1rem;
-        }
-        .experience-card p {
-            font-weight: 300;
-        }
-
-        /* --- SEÇÃO PROJETOS --- */
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-        }
-        .project-card {
-            padding: 1.5rem;
-            border-radius: 15px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            background: var(--glass-bg);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border: var(--glass-border);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-        }
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-        }
-        .project-card .client {
-            font-size: 0.9rem;
-            font-weight: bold;
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-            display: block;
-        }
-        .project-card h3 {
-            margin-bottom: 0.5rem;
-        }
-        .project-card p {
-            flex-grow: 1; /* Faz a descrição ocupar o espaço disponível */
-        }
-        .project-tags {
-            margin-top: 1rem;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-        .tag {
-            background-color: var(--secondary-color);
-            color: var(--primary-color);
-            padding: 0.3rem 0.8rem;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-
-        /* --- FOOTER / CONTATO --- */
-        footer {
-            text-align: center;
-        }
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            max-width: 800px;
-            margin: 0 auto 3rem auto;
-        }
-        .contact-item {
-            padding: 1.5rem;
-        }
-        .contact-item i {
-            font-size: 2rem;
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-        }
-        .contact-item a {
-            color: var(--dark-color);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        .contact-item a:hover {
-            color: var(--primary-color);
-        }
-        .copyright {
-            margin-top: 3rem;
-            font-size: 0.9rem;
-            color: #666;
-        }
-
-        /* --- RESPONSIVIDADE --- */
-        @media(max-width: 768px) {
-            header .container {
-                width: 100%;
-                border-radius: 0;
-            }
-            header nav {
-                display: none;
-            }
-            section {
-                padding: 3rem 0;
-            }
-            .sobre-content {
-                flex-direction: column;
-            }
-            .project-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
 </head>
 <body>
 
@@ -556,40 +165,335 @@
             <div class="container">
                 <h2>Projetos</h2>
                 <p style="text-align: center; max-width: 700px; margin: -2rem auto 3rem auto;">Alguns dos projetos que fiz parte e que mais impactaram positivamente a mim e os grupos com que lidei.</p>
+                
                 <div class="project-grid">
-                    <div class="project-card">
-                        <span class="client">Projeto Pessoal</span>
-                        <h3>Navegador de Sonhos</h3>
-                        <p>Uma plataforma de E-commerce de bolsas e mochilas criada e inspirada em pessoas que precisam de um companheiro fiel, não importa o lugar ou a hora.</p>
+                    
+                    <!-- PROJETO BMO INOVA SIMPLES (NOVO) -->
+                    <div class="project-card" id="project-bmo-inova">
+                        <div class="carousel-container">
+                            <div class="carousel-track" data-carousel-track="bmo-inova">
+                                <div class="carousel-slide">
+                                    <img src="https://placehold.co/400x250/202c40/ffffff?text=BMO+Inova+-+Wireframes" alt="Imagem 1 do projeto BMO Inova Simples: Wireframes">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="https://placehold.co/400x250/3e5c9b/ffffff?text=BMO+Inova+-+Design+Final" alt="Imagem 2 do projeto BMO Inova Simples: Design Final">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="https://placehold.co/400x250/78909c/ffffff?text=BMO+Inova+-+Mobile+View" alt="Imagem 3 do projeto BMO Inova Simples: Vista Mobile">
+                                </div>
+                            </div>
+                            <div class="carousel-controls">
+                                <button class="carousel-btn prev-btn" data-carousel-target="bmo-inova">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <button class="carousel-btn next-btn" data-carousel-target="bmo-inova">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="project-header">
+                            <span class="client">Cliente: BMO</span>
+                            <h3>BMO Inova Simples</h3>
+                            <span class="role">Web Design / Startup</span>
+                        </div>
+
+                        <div class="project-details-section">
+                            <h4>Contexto</h4>
+                            <p>Website institucional para uma startup focada em transformar ideias em negócios através de consultoria, desenvolvimento e estratégia. Projeto desenvolvido em equipe.</p>
+                        </div>
+                        <div class="project-details-section">
+                            <h4>Processo e Ferramentas</h4>
+                            <ul>
+                                <li><strong>Design:</strong> Figma para wireframes, prototipagem e design final.</li>
+                                <li><strong>Desenvolvimento:</strong> HTML/CSS com foco em performance e responsividade.</li>
+                                <li><strong>Organização:</strong> Linear para gestão do projeto.</li>
+                                <li><strong>Metodologia:</strong> Trabalho em equipe, dailys 3× por semana, sprints semanais e retrospectivas mensais.</li>
+                            </ul>
+                        </div>
+                        <div class="project-details-section">
+                            <h4>Solução</h4>
+                            <p>Landing page com hierarquia visual clara, tipografia bold e paleta azul profunda. Estrutura em seções digestíveis com apresentação de serviços, estudos de caso e CTAs estratégicos.</p>
+                        </div>
+                        
                         <div class="project-tags">
-                            <span class="tag">E-commerce</span>
-                            <span class="tag">Branding</span>
-                            <span class="tag">UI Design</span>
-                            <span class="tag">Figma</span>
+                            <span class="tag">Web Design</span>
+                            <span class="tag">Startup</span>
+                            <span class="tag">Consultoria</span>
+                            <span class="tag">HTML/CSS</span>
                         </div>
                     </div>
-                    <div class="project-card">
-                        <span class="client">Cliente: BMO</span>
-                        <h3>Projeto Aurora</h3>
-                        <p>Uma Dashboard para profissionais de saúde com foco em visualização de dados e eficiência no atendimento, e compartilhamento de estudos clínicos.</p>
-                        <div class="project-tags">
-                            <span class="tag">Dashboard</span>
-                            <span class="tag">Data Viz</span>
-                            <span class="tag">Web App</span>
-                            <span class="tag">Sketch</span>
+
+                    <!-- PROJETO NEUTRA+ (ATUALIZADO) -->
+                    <div class="project-card" id="project-neutra">
+                         <div class="carousel-container">
+                            <div class="carousel-track" data-carousel-track="neutra">
+                                <div class="carousel-slide">
+                                    <img src="https://placehold.co/400x250/607d8b/ffffff?text=Neutra+-+Dashboard+Antigo" alt="Imagem 1 do projeto Neutra+: Dashboard Antigo (Antes)">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="https://placehold.co/400x250/263238/ffffff?text=Neutra+-+Dark+Mode+Redesign" alt="Imagem 2 do projeto Neutra+: Redesign em Dark Mode">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="https://placehold.co/400x250/455a64/ffffff?text=Neutra+-+Design+System+Components" alt="Imagem 3 do projeto Neutra+: Componentes do Design System">
+                                </div>
+                            </div>
+                            <div class="carousel-controls">
+                                <button class="carousel-btn prev-btn" data-carousel-target="neutra">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <button class="carousel-btn next-btn" data-carousel-target="neutra">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
                         </div>
-                    </div>
-                    <div class="project-card">
-                        <span class="client">Cliente: BMO</span>
-                        <h3>Projeto Neutra+</h3>
-                        <p>Redesign completo e criação de protótipos para uma plataforma de provedores de internet, que se expandiu para um Marketplace completo e intuitivo.</p>
+
+                        <div class="project-header">
+                            <span class="client">Cliente: BMO</span>
+                            <h3>Neutra+</h3>
+                            <span class="role">UX Research / UI Design</span>
+                        </div>
+                        <div class="project-details-section">
+                            <h4>Contexto</h4>
+                            <p>Redesign completo de uma plataforma para provedores de internet gerenciarem operações. Projeto desenvolvido em equipe na BMO.</p>
+                            <p><strong>Pesquisa UX:</strong> Entrevistas e análise de uso identificaram pontos críticos: interface confusa, fluxos longos e falta de visão geral.</p>
+                        </div>
+                        <div class="project-details-section">
+                            <h4>Processo e Ferramentas</h4>
+                            <ul>
+                                <li><strong>Design:</strong> Figma para wireframes e protótipos de alta fidelidade.</li>
+                                <li><strong>Organização:</strong> Linear para acompanhamento de funcionalidades e correção de bugs.</li>
+                                <li><strong>Metodologia:</strong> Trabalho em equipe com dailys 3× por semana, sprints semanais e retrospectivas regulares.</li>
+                            </ul>
+                        </div>
+                        <div class="project-details-section">
+                            <h4>Solução</h4>
+                            <p>Nova arquitetura de informação, design system consistente, dark mode e expansão para marketplace integrado.</p>
+                        </div>
+                        
                         <div class="project-tags">
                             <span class="tag">UX Research</span>
                             <span class="tag">UI Design</span>
-                            <span class="tag">Mobile</span>
-                            <span class="tag">Figma</span>
+                            <span class="tag">Plataforma SaaS</span>
+                            <span class="tag">Design System</span>
                         </div>
                     </div>
+                    
+                    <!-- PROJETO AURORA (ATUALIZADO) -->
+                    <div class="project-card" id="project-aurora">
+                        <div class="carousel-container">
+                            <div class="carousel-track" data-carousel-track="aurora">
+                                <div class="carousel-slide">
+                                    <img src="https://placehold.co/400x250/694c96/ffffff?text=Aurora+-+Dashboard+Principal" alt="Imagem 1 do projeto Aurora: Dashboard Principal">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="https://placehold.co/400x250/9e9e9e/ffffff?text=Aurora+-+Estudos+Clínicos+Viz" alt="Imagem 2 do projeto Aurora: Visualização de Estudos Clínicos">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="https://placehold.co/400x250/4a148c/ffffff?text=Aurora+-+Design+System+Acessível" alt="Imagem 3 do projeto Aurora: Design System Acessível">
+                                </div>
+                            </div>
+                            <div class="carousel-controls">
+                                <button class="carousel-btn prev-btn" data-carousel-target="aurora">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <button class="carousel-btn next-btn" data-carousel-target="aurora">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="project-header">
+                            <span class="client">Cliente: BMO</span>
+                            <h3>Projeto Aurora (Dashboard de Saúde)</h3>
+                            <span class="role">UI Design / Data Viz</span>
+                        </div>
+                        <div class="project-details-section">
+                            <h4>Contexto</h4>
+                            <p>Dashboard para profissionais de saúde compartilharem estudos clínicos. Primeiro projeto com total liberdade criativa na BMO.</p>
+                        </div>
+                        <div class="project-details-section">
+                            <h4>Processo e Ferramentas</h4>
+                            <ul>
+                                <li><strong>Design:</strong> Figma para prototipagem e Sketch para design final.</li>
+                                <li><strong>Organização:</strong> Linear para gestão de tarefas.</li>
+                                <li><strong>Metodologia:</strong> Trabalho em equipe com dailys 3× por semana, sprints semanais e retrospectivas.</li>
+                            </ul>
+                        </div>
+                        <div class="project-details-section">
+                            <h4>Solução</h4>
+                            <p>Dashboard com hierarquia visual clara, visualizações interativas e navegação simplificada. Design system próprio, com ênfase em acessibilidade e leitura de dados.</p>
+                        </div>
+                        
+                        <div class="project-tags">
+                            <span class="tag">Dashboard</span>
+                            <span class="tag">Data Viz</span>
+                            <span class="tag">Healthcare</span>
+                            <span class="tag">Design System</span>
+                        </div>
+                    </div>
+
+                    <!-- PROJETO NAVEGADOR DE SONHOS (ATUALIZADO) -->
+                    <div class="project-card" id="project-navegador-sonhos">
+                        <div class="carousel-container">
+                            <div class="carousel-track" data-carousel-track="navegador">
+                                <div class="carousel-slide">
+                                    <img src="https://placehold.co/400x250/795548/ffffff?text=Navegador+-+Identidade+Visual" alt="Imagem 1 do projeto Navegador de Sonhos: Identidade Visual">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="https://placehold.co/400x250/a1887f/ffffff?text=Navegador+-+E-commerce+Layout" alt="Imagem 2 do projeto Navegador de Sonhos: Layout E-commerce">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="https://placehold.co/400x250/5d4037/ffffff?text=Navegador+-+Aplicações+Web" alt="Imagem 3 do projeto Navegador de Sonhos: Aplicações Web">
+                                </div>
+                            </div>
+                            <div class="carousel-controls">
+                                <button class="carousel-btn prev-btn" data-carousel-target="navegador">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <button class="carousel-btn next-btn" data-carousel-target="navegador">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="project-header">
+                            <span class="client">Projeto Pessoal</span>
+                            <h3>Navegador de Sonhos</h3>
+                            <span class="role">Branding / Web Design</span>
+                        </div>
+                        <div class="project-details-section">
+                            <h4>Contexto</h4>
+                            <p>Identidade visual completa para uma marca de mochilas premium, do zero até e‑commerce.</p>
+                        </div>
+                        <div class="project-details-section">
+                            <h4>Processo e Ferramentas</h4>
+                            <ul>
+                                <li><strong>Design:</strong> Figma para website e aplicações.</li>
+                                <li><strong>Branding:</strong> Design system completo com guidelines e storytelling.</li>
+                                <li><strong>Desenvolvimento:</strong> HTML/CSS com foco em performance.</li>
+                            </ul>
+                        </div>
+                        <div class="project-details-section">
+                            <h4>Conceito</h4>
+                            <p>Identidade minimalista, elementos geométricos remetendo à navegação, paleta terrosa e narrativa visual que convida à aventura.</p>
+                        </div>
+                        
+                        <div class="project-tags">
+                            <span class="tag">Branding</span>
+                            <span class="tag">E-commerce</span>
+                            <span class="tag">Design System</span>
+                            <span class="tag">Storytelling</span>
+                        </div>
+                    </div>
+
+                    <!-- PROJETO PLATAFORMA DE ENSINO (NOVO) -->
+                    <div class="project-card" id="project-plataforma-ensino">
+                        <div class="carousel-container">
+                            <div class="carousel-track" data-carousel-track="ensino">
+                                <div class="carousel-slide">
+                                    <img src="https://placehold.co/400x250/004d40/ffffff?text=Ensino+-+Mobile+Gamificado" alt="Imagem 1 do projeto Plataforma de Ensino: Mobile Gamificado">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="https://placehold.co/400x250/26a69a/ffffff?text=Ensino+-+Wireframes+Mobile" alt="Imagem 2 do projeto Plataforma de Ensino: Wireframes Mobile">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="https://placehold.co/400x250/4db6ac/ffffff?text=Ensino+-+Fluxo+de+Gamificação" alt="Imagem 3 do projeto Plataforma de Ensino: Fluxo de Gamificação">
+                                </div>
+                            </div>
+                            <div class="carousel-controls">
+                                <button class="carousel-btn prev-btn" data-carousel-target="ensino">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <button class="carousel-btn next-btn" data-carousel-target="ensino">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="project-header">
+                            <span class="client">Projeto de Extensão (UFC)</span>
+                            <h3>Plataforma de Ensino Gamificada</h3>
+                            <span class="role">UX/UI Design / Gamificação</span>
+                        </div>
+                        <div class="project-details-section">
+                            <h4>Contexto</h4>
+                            <p>Desenvolvida durante estágio em extensão universitária, focada em gamificação para aumentar o engajamento e a retenção de conteúdo.</p>
+                        </div>
+                        <div class="project-details-section">
+                            <h4>Processo e Ferramentas</h4>
+                            <ul>
+                                <li><strong>Design:</strong> Figma mobile‑first.</li>
+                                <li><strong>Organização:</strong> Trello e Miro para gestão e brainstorms.</li>
+                                <li><strong>Metodologia:</strong> Trabalho em equipe, dailys semanais, iterações com feedback de usuários.</li>
+                            </ul>
+                        </div>
+                        <div class="project-details-section">
+                            <h4>Solução</h4>
+                            <p>Plataforma de ensino gamificada com foco em engajamento estudantil e acessibilidade, utilizando design mobile-first.</p>
+                        </div>
+                        
+                        <div class="project-tags">
+                            <span class="tag">Gamificação</span>
+                            <span class="tag">Mobile-first</span>
+                            <span class="tag">Educação</span>
+                            <span class="tag">UX/UI</span>
+                        </div>
+                    </div>
+
+                    <!-- PROJETO OUTROS PROJETOS (NOVO) -->
+                    <div class="project-card" id="project-outros">
+                        <div class="carousel-container">
+                            <div class="carousel-track" data-carousel-track="outros">
+                                <div class="carousel-slide">
+                                    <span class="placeholder-text">Exemplo de App de Delivery (Mockup)</span>
+                                </div>
+                                <div class="carousel-slide">
+                                    <span class="placeholder-text">Exemplo de Sistema de Autenticação (Fluxo)</span>
+                                </div>
+                                <div class="carousel-slide">
+                                    <span class="placeholder-text">Exemplo de Painel Administrativo Mobile</span>
+                                </div>
+                            </div>
+                            <div class="carousel-controls">
+                                <button class="carousel-btn prev-btn" data-carousel-target="outros">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <button class="carousel-btn next-btn" data-carousel-target="outros">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="project-header">
+                            <span class="client">Vários Clientes (Freelance & Estágio)</span>
+                            <h3>Outros Projetos Mobile</h3>
+                            <span class="role">UX/UI Design</span>
+                        </div>
+                        <div class="project-details-section">
+                            <h4>Contexto</h4>
+                            <p>Diversos projetos menores focados no ecossistema mobile, incluindo apps de delivery, sistemas de autenticação e painéis administrativos.</p>
+                        </div>
+                        <div class="project-details-section">
+                            <h4>Foco Principal</h4>
+                            <ul>
+                                <li><strong>Usabilidade:</strong> Garantir que as interações sejam fluidas e intuitivas.</li>
+                                <li><strong>Padrões Mobile:</strong> Aplicação rigorosa dos padrões de design iOS e Android.</li>
+                            </ul>
+                        </div>
+                        <div class="project-details-section">
+                            <h4>Solução</h4>
+                            <p>Soluções rápidas e eficientes, sempre priorizando a experiência do usuário e a performance em dispositivos móveis.</p>
+                        </div>
+                        
+                        <div class="project-tags">
+                            <span class="tag">Mobile</span>
+                            <span class="tag">Apps</span>
+                            <span class="tag">Usabilidade</span>
+                            <span class="tag">Painéis Admin</span>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -620,5 +524,49 @@
         </div>
     </footer>
 
+    <script>
+        /**
+         * Script para a funcionalidade do Carrossel (Slider)
+         * Usa a propriedade scrollLeft para mover o track.
+         */
+        document.addEventListener('DOMContentLoaded', () => {
+            const carouselContainers = document.querySelectorAll('.carousel-container');
+
+            carouselContainers.forEach(container => {
+                const trackId = container.querySelector('.carousel-track').dataset.carouselTrack;
+                const track = container.querySelector(`[data-carousel-track="${trackId}"]`);
+                const prevBtn = container.querySelector('.prev-btn[data-carousel-target="' + trackId + '"]');
+                const nextBtn = container.querySelector('.next-btn[data-carousel-target="' + trackId + '"]');
+                
+                // Pega a largura do primeiro slide para saber o quanto rolar
+                const slideWidth = track.querySelector('.carousel-slide').offsetWidth;
+
+                // Função para atualizar o estado dos botões (desativar no início/fim)
+                const updateButtons = () => {
+                    const maxScrollLeft = track.scrollWidth - track.clientWidth;
+                    prevBtn.disabled = track.scrollLeft <= 1; // 1 é a margem de erro
+                    nextBtn.disabled = track.scrollLeft >= maxScrollLeft - 1;
+                };
+
+                // Inicializa os botões
+                updateButtons();
+                
+                // Listener para o evento de scroll (se o usuário arrastar)
+                track.addEventListener('scroll', updateButtons);
+
+                // Botão Anterior
+                prevBtn.addEventListener('click', () => {
+                    track.scrollLeft -= slideWidth;
+                    // O updateButtons será chamado pelo evento 'scroll' do track
+                });
+
+                // Botão Próximo
+                nextBtn.addEventListener('click', () => {
+                    track.scrollLeft += slideWidth;
+                    // O updateButtons será chamado pelo evento 'scroll' do track
+                });
+            });
+        });
+    </script>
 </body>
 </html>
