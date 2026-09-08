@@ -1,0 +1,268 @@
+/* ─────────────────────────────────────────────────────────────────
+   Mennu — Design Tokens (Material UI conventions)
+   Aligned with MUI v5/v6 theme structure: palette.{main,light,dark,contrastText},
+   Poppins, MUI 25-step elevation, 4px radius default, 8pt spacing.
+   ────────────────────────────────────────────────────────────────── */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+/* ── Poppins · local brand fonts ──────────────────────────── */
+@font-face { font-family: "Poppins"; font-style: normal; font-weight: 100; font-display: swap; src: url("fonts/Poppins-Thin.ttf") format("truetype"); }
+@font-face { font-family: "Poppins"; font-style: italic; font-weight: 100; font-display: swap; src: url("fonts/Poppins-ThinItalic.ttf") format("truetype"); }
+@font-face { font-family: "Poppins"; font-style: normal; font-weight: 200; font-display: swap; src: url("fonts/Poppins-ExtraLight.ttf") format("truetype"); }
+@font-face { font-family: "Poppins"; font-style: italic; font-weight: 200; font-display: swap; src: url("fonts/Poppins-ExtraLightItalic.ttf") format("truetype"); }
+@font-face { font-family: "Poppins"; font-style: normal; font-weight: 300; font-display: swap; src: url("fonts/Poppins-Light.ttf") format("truetype"); }
+@font-face { font-family: "Poppins"; font-style: italic; font-weight: 300; font-display: swap; src: url("fonts/Poppins-LightItalic.ttf") format("truetype"); }
+@font-face { font-family: "Poppins"; font-style: normal; font-weight: 400; font-display: swap; src: url("fonts/Poppins-Regular.ttf") format("truetype"); }
+@font-face { font-family: "Poppins"; font-style: italic; font-weight: 400; font-display: swap; src: url("fonts/Poppins-Italic.ttf") format("truetype"); }
+@font-face { font-family: "Poppins"; font-style: normal; font-weight: 500; font-display: swap; src: url("fonts/Poppins-Medium.ttf") format("truetype"); }
+@font-face { font-family: "Poppins"; font-style: italic; font-weight: 500; font-display: swap; src: url("fonts/Poppins-MediumItalic.ttf") format("truetype"); }
+@font-face { font-family: "Poppins"; font-style: normal; font-weight: 600; font-display: swap; src: url("fonts/Poppins-SemiBold.ttf") format("truetype"); }
+@font-face { font-family: "Poppins"; font-style: italic; font-weight: 600; font-display: swap; src: url("fonts/Poppins-SemiBoldItalic.ttf") format("truetype"); }
+@font-face { font-family: "Poppins"; font-style: normal; font-weight: 700; font-display: swap; src: url("fonts/Poppins-Bold.ttf") format("truetype"); }
+@font-face { font-family: "Poppins"; font-style: italic; font-weight: 700; font-display: swap; src: url("fonts/Poppins-BoldItalic.ttf") format("truetype"); }
+@font-face { font-family: "Poppins"; font-style: normal; font-weight: 800; font-display: swap; src: url("fonts/Poppins-ExtraBold.ttf") format("truetype"); }
+@font-face { font-family: "Poppins"; font-style: italic; font-weight: 800; font-display: swap; src: url("fonts/Poppins-ExtraBoldItalic.ttf") format("truetype"); }
+@font-face { font-family: "Poppins"; font-style: normal; font-weight: 900; font-display: swap; src: url("fonts/Poppins-Black.ttf") format("truetype"); }
+@font-face { font-family: "Poppins"; font-style: italic; font-weight: 900; font-display: swap; src: url("fonts/Poppins-BlackItalic.ttf") format("truetype"); }
+
+:root {
+  /* ── Palette · Primary (Mennu Orange) ──────────────────────── */
+  --mn-primary-main:        #FF3D00;
+  --mn-primary-light:       #FF7539;
+  --mn-primary-dark:        #C30000;
+  --mn-primary-contrast:    #FFFFFF;
+
+  /* ── Palette · Secondary (Material Amber 700) ──────────────── */
+  --mn-secondary-main:      #F6A000;
+  --mn-secondary-light:     #FFD149;
+  --mn-secondary-dark:      #BF7100;
+  --mn-secondary-contrast:  rgba(0, 0, 0, 0.87);
+
+  /* ── Palette · Semantic (MUI defaults) ─────────────────────── */
+  --mn-success-main:        #2E7D32;
+  --mn-success-light:       #4CAF50;
+  --mn-success-dark:        #1B5E20;
+  --mn-success-contrast:    #FFFFFF;
+
+  --mn-error-main:          #D32F2F;
+  --mn-error-light:         #EF5350;
+  --mn-error-dark:          #C62828;
+  --mn-error-contrast:      #FFFFFF;
+
+  --mn-warning-main:        #ED6C02;
+  --mn-warning-light:       #FF9800;
+  --mn-warning-dark:        #E65100;
+  --mn-warning-contrast:    #FFFFFF;
+
+  --mn-info-main:           #0288D1;
+  --mn-info-light:          #03A9F4;
+  --mn-info-dark:           #01579B;
+  --mn-info-contrast:       #FFFFFF;
+
+  /* ── Text ──────────────────────────────────────────────────── */
+  --mn-text-primary:        rgba(0, 0, 0, 0.87);
+  --mn-text-secondary:      rgba(0, 0, 0, 0.60);
+  --mn-text-disabled:       rgba(0, 0, 0, 0.38);
+
+  /* ── Background / Surface ──────────────────────────────────── */
+  --mn-bg-default:          #F4F6F8;
+  --mn-bg-paper:            #FFFFFF;
+
+  /* ── Action layers ─────────────────────────────────────────── */
+  --mn-action-active:       rgba(0, 0, 0, 0.54);
+  --mn-action-hover:        rgba(0, 0, 0, 0.04);
+  --mn-action-selected:     rgba(0, 0, 0, 0.08);
+  --mn-action-disabled:     rgba(0, 0, 0, 0.26);
+  --mn-action-disabled-bg:  rgba(0, 0, 0, 0.12);
+  --mn-action-focus:        rgba(0, 0, 0, 0.12);
+
+  /* ── Divider ───────────────────────────────────────────────── */
+  --mn-divider:             rgba(0, 0, 0, 0.12);
+
+  /* ── Grey scale (MUI grey palette) ─────────────────────────── */
+  --mn-grey-50:  #FAFAFA;
+  --mn-grey-100: #F5F5F5;
+  --mn-grey-200: #EEEEEE;
+  --mn-grey-300: #E0E0E0;
+  --mn-grey-400: #BDBDBD;
+  --mn-grey-500: #9E9E9E;
+  --mn-grey-600: #757575;
+  --mn-grey-700: #616161;
+  --mn-grey-800: #424242;
+  --mn-grey-900: #212121;
+
+  /* ── Type — Poppins on the MUI typography scale ───────────── */
+  --mn-font: "Poppins", "Helvetica", "Arial", sans-serif;
+  --mn-font-mono: "Roboto Mono", ui-monospace, monospace;
+
+  /* MUI typography variants — Poppins on MUI defaults. */
+  --mn-h1:        300 96px/1.167 var(--mn-font);    /* -1.5px tracking */
+  --mn-h2:        300 60px/1.2   var(--mn-font);    /* -0.5px */
+  --mn-h3:        400 48px/1.167 var(--mn-font);
+  --mn-h4:        400 34px/1.235 var(--mn-font);    /* 0.25px */
+  --mn-h5:        400 24px/1.334 var(--mn-font);
+  --mn-h6:        500 20px/1.6   var(--mn-font);    /* 0.15px */
+  --mn-subtitle1: 400 16px/1.75  var(--mn-font);    /* 0.15px */
+  --mn-subtitle2: 500 14px/1.57  var(--mn-font);    /* 0.1px */
+  --mn-body1:     400 16px/1.5   var(--mn-font);    /* 0.15px */
+  --mn-body2:     400 14px/1.43  var(--mn-font);    /* 0.15px */
+  --mn-button:    500 14px/1.75  var(--mn-font);    /* 0.4px, uppercase */
+  --mn-caption:   400 12px/1.66  var(--mn-font);    /* 0.4px */
+  --mn-overline:  400 12px/2.66  var(--mn-font);    /* 1px, uppercase */
+
+  /* ── Shape (MUI default radius = 4px) ──────────────────────── */
+  --mn-radius:        4px;
+  --mn-radius-sm:     2px;
+  --mn-radius-md:     4px;
+  --mn-radius-lg:     8px;
+  --mn-radius-xl:     12px;
+  --mn-radius-pill:   9999px;
+
+  /* ── Spacing (MUI uses 8px base; theme.spacing(n) === n*8px) */
+  --mn-space-1: 8px;
+  --mn-space-2: 16px;
+  --mn-space-3: 24px;
+  --mn-space-4: 32px;
+  --mn-space-5: 40px;
+  --mn-space-6: 48px;
+  --mn-space-7: 56px;
+  --mn-space-8: 64px;
+  --mn-space-9: 72px;
+  --mn-space-10: 80px;
+
+  /* ── Elevation (MUI shadows[0..24], curated subset) ────────── */
+  --mn-elev-0:  none;
+  --mn-elev-1:  0px 2px 1px -1px rgba(0,0,0,0.20), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12);
+  --mn-elev-2:  0px 3px 1px -2px rgba(0,0,0,0.20), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12);
+  --mn-elev-3:  0px 3px 3px -2px rgba(0,0,0,0.20), 0px 3px 4px 0px rgba(0,0,0,0.14), 0px 1px 8px 0px rgba(0,0,0,0.12);
+  --mn-elev-4:  0px 2px 4px -1px rgba(0,0,0,0.20), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
+  --mn-elev-6:  0px 3px 5px -1px rgba(0,0,0,0.20), 0px 6px 10px 0px rgba(0,0,0,0.14), 0px 1px 18px 0px rgba(0,0,0,0.12);
+  --mn-elev-8:  0px 5px 5px -3px rgba(0,0,0,0.20), 0px 8px 10px 1px rgba(0,0,0,0.14), 0px 3px 14px 2px rgba(0,0,0,0.12);
+  --mn-elev-12: 0px 7px 8px -4px rgba(0,0,0,0.20), 0px 12px 17px 2px rgba(0,0,0,0.14), 0px 5px 22px 4px rgba(0,0,0,0.12);
+  --mn-elev-16: 0px 8px 10px -5px rgba(0,0,0,0.20), 0px 16px 24px 2px rgba(0,0,0,0.14), 0px 6px 30px 5px rgba(0,0,0,0.12);
+  --mn-elev-24: 0px 11px 15px -7px rgba(0,0,0,0.20), 0px 24px 38px 3px rgba(0,0,0,0.14), 0px 9px 46px 8px rgba(0,0,0,0.12);
+
+  /* ── Motion (MUI easings & durations) ──────────────────────── */
+  --mn-ease-standard:    cubic-bezier(0.4, 0, 0.2, 1);
+  --mn-ease-decelerated: cubic-bezier(0, 0, 0.2, 1);
+  --mn-ease-accelerated: cubic-bezier(0.4, 0, 1, 1);
+  --mn-ease-sharp:       cubic-bezier(0.4, 0, 0.6, 1);
+
+  --mn-dur-shortest:    150ms;
+  --mn-dur-shorter:     200ms;
+  --mn-dur-short:       250ms;
+  --mn-dur-standard:    300ms;
+  --mn-dur-complex:     375ms;
+
+  /* ── Z-index (MUI defaults) ────────────────────────────────── */
+  --mn-z-mobile-stepper: 1000;
+  --mn-z-fab:            1050;
+  --mn-z-speed-dial:     1050;
+  --mn-z-app-bar:        1100;
+  --mn-z-drawer:         1200;
+  --mn-z-modal:          1300;
+  --mn-z-snackbar:       1400;
+  --mn-z-tooltip:        1500;
+
+  /* ── Legacy aliases (Tailwind-style scales used by JSX screens) ── */
+  /* Orange scale — Mennu primary */
+  --mn-orange-50:  #FFF4ED;
+  --mn-orange-100: #FFE6D5;
+  --mn-orange-200: #FFC9A8;
+  --mn-orange-300: #FFA178;
+  --mn-orange-400: #FF7539;
+  --mn-orange-500: #FF3D00;
+  --mn-orange-600: #E33500;
+  --mn-orange-700: #C30000;
+  --mn-orange-800: #9A2400;
+
+  /* Ink (neutral text/border scale) — mapped onto MUI grey */
+  --mn-ink-50:  #FAFAFA;
+  --mn-ink-100: #F3F4F6;
+  --mn-ink-200: #E5E7EB;
+  --mn-ink-300: #D1D5DC;
+  --mn-ink-400: #99A1AF;
+  --mn-ink-500: #6A7282;
+  --mn-ink-600: #4A5565;
+  --mn-ink-700: #364153;
+  --mn-ink-800: #1F2937;
+  --mn-ink-900: #0A0A0A;
+  --mn-white:   #FFFFFF;
+
+  /* Success */
+  --mn-success-100: #F0FDF4;
+  --mn-success-500: #00A63E;
+  --mn-success-700: #008236;
+
+  /* Info / Blue */
+  --mn-info-100:    #EFF6FF;
+  --mn-info-500:    #155DFC;
+  --mn-info-700:    #1447E6;
+
+  /* Danger / Red */
+  --mn-danger-100:  #FEF2F2;
+  --mn-danger-500:  #E7000B;
+  --mn-danger-600:  #DC2626;
+  --mn-danger-700:  #B91C1C;
+
+  /* Warning / Amber */
+  --mn-warn-100:    #FEF3C7;
+  --mn-warn-500:    #F6A000;
+  --mn-warn-700:    #B45309;
+  --mn-amber-500:   #F6A000;
+
+  /* Violet / accent */
+  --mn-violet-100:  #FAF5FF;
+  --mn-violet-500:  #9810FA;
+
+  /* Motion (used by ui.jsx) */
+  --mn-fast: 200ms var(--mn-ease-standard);
+
+  /* Legacy radius aliases (Tailwind-ish) */
+  --mn-r-sm:   6px;
+  --mn-r-md:   10px;
+  --mn-r-lg:   12px;
+  --mn-r-xl:   16px;
+  --mn-r-2xl:  20px;
+  --mn-r-full: 9999px;
+
+  /* Legacy shadow aliases */
+  --mn-shadow-xs:     0 1px 2px rgba(15, 23, 42, 0.05);
+  --mn-shadow-sm:     0 2px 6px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04);
+  --mn-shadow-md:     0 6px 14px rgba(15, 23, 42, 0.08), 0 2px 4px rgba(15, 23, 42, 0.05);
+  --mn-shadow-lg:     0 14px 28px rgba(15, 23, 42, 0.12), 0 4px 8px rgba(15, 23, 42, 0.06);
+  --mn-shadow-xl:     0 24px 48px rgba(15, 23, 42, 0.16), 0 8px 16px rgba(15, 23, 42, 0.08);
+  --mn-shadow-orange: 0 8px 20px rgba(255, 61, 0, 0.32), 0 2px 4px rgba(255, 61, 0, 0.18);
+}
+
+/* ── Base reset ─────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+html { font-size: 16px; }
+body {
+  margin: 0;
+  font: var(--mn-body1);
+  letter-spacing: 0.15px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--mn-text-primary);
+  background: var(--mn-bg-default);
+}
+button { font-family: inherit; cursor: pointer; }
+input, textarea, select { font-family: inherit; }
+
+/* ── Type roles (MUI variants) ──────────────────────────────── */
+.mn-h1 { font: var(--mn-h1); letter-spacing: -1.5px; margin: 0; }
+.mn-h2 { font: var(--mn-h2); letter-spacing: -0.5px; margin: 0; }
+.mn-h3 { font: var(--mn-h3); letter-spacing: 0; margin: 0; }
+.mn-h4 { font: var(--mn-h4); letter-spacing: 0.25px; margin: 0; }
+.mn-h5 { font: var(--mn-h5); letter-spacing: 0; margin: 0; }
+.mn-h6 { font: var(--mn-h6); letter-spacing: 0.15px; margin: 0; }
+.mn-subtitle1 { font: var(--mn-subtitle1); letter-spacing: 0.15px; }
+.mn-subtitle2 { font: var(--mn-subtitle2); letter-spacing: 0.1px; }
+.mn-body1 { font: var(--mn-body1); letter-spacing: 0.15px; }
+.mn-body2 { font: var(--mn-body2); letter-spacing: 0.15px; }
+.mn-button-text { font: var(--mn-button); letter-spacing: 0.4px; text-transform: uppercase; }
+.mn-caption { font: var(--mn-caption); letter-spacing: 0.4px; color: var(--mn-text-secondary); }
+.mn-overline { font: var(--mn-overline); letter-spacing: 1px; text-transform: uppercase; color: var(--mn-text-secondary); }
